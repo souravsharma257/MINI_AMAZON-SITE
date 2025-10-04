@@ -1,0 +1,14 @@
+{% extends "shop/base.html" %}
+{% block content %}
+<h2>Your Cart</h2>
+<ul>
+  {% for item in cart %}
+    <li>{{ item.name }} - ₹{{ item.price }}</li>
+  {% empty %}
+    <li>No items in cart</li>
+  {% endfor %}
+</ul>
+{% if cart %}
+  <a href="{% url 'checkout_success' %}">Checkout</a>
+{% endif %}
+{% endblock %}

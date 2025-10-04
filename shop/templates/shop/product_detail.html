@@ -1,0 +1,8 @@
+{% extends "shop/base.html" %}
+{% block content %}
+<h2>{{ product.name }}</h2>
+<img src="{{ product.image }}" width="200">
+<p>{{ product.description }}</p>
+<p><strong>₹{{ product.price }}</strong></p>
+<a href="{% url 'add_to_cart' product.pk %}">Add to Cart</a>
+{% endblock %}

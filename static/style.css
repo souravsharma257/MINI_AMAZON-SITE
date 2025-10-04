@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  margin: 10px;
+}
+header {
+  background: grey;
+  color: #fff;
+  padding: 10px;
+}
+header a {
+  color: black;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  width: 180px;
+}
