@@ -1,0 +1,20 @@
+{% extends "shop/base.html" %}
+{% block content %}
+<h2>Your Order History</h2>
+{% if orders %}
+    {% for order in orders %}
+    <div class="order-card">
+        <h3>Order #{{ order.id }} - {{ order.created_at|date:"M d, Y" }}</h3>
+        <p>Status: <span class="status-{{ order.status }}">{{ order.get_status_display }}</span></p>
+        <p>Total: ₹{{ order.total_price }}</p>
+        <ul>
+            {% for item in order.orderitem_set.all %}
+            <li>{{ item.product.name }} (Qty: {{ item.quantity }}) - ₹{{ item.product.price }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>No orders yet. <a href="{% url 'product_list' %}">Start Shopping</a></p>
+{% endif %}
+{% endblock %}

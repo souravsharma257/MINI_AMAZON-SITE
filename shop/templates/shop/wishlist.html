@@ -1,0 +1,16 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+    <h2>Your Wishlist</h2>
+    {% if wishlist_products %}
+        {% for product in wishlist_products %}
+            <div class="card">
+                <h3>{{ product.name }}</h3>
+                <p>₹{{ product.price }}</p>
+                <a href="{% url 'add_to_cart' product.pk %}">Add to Cart</a>
+                <a href="{% url 'add_to_wishlist' product.pk %}">Remove</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No items in wishlist. <a href="{% url 'product_list' %}">Browse Products</a></p>
+    {% endif %}
+{% endblock %}
