@@ -1,1 +1,0 @@
-Drawing/Paint Web App — Built an interactive drawing application using HTML5 Canvas and vanilla JavaScript. Implemented color and brush size customization, canvas clearing, and image-saving features. Focused on user experience and performance using native browser APIs
